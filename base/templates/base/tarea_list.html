@@ -1,0 +1,19 @@
+<h1>Lista de pendientes<h1/>    
+    
+<table>  
+    <tr>Elementos</tr>
+    
+    {% for tarea in tareas %}
+
+    <tr>
+        <td>{{tarea.titulo}}</td>
+    </tr>
+
+    {% empty %}
+
+    <h3>No hay elementos en la lista<h3/> 
+
+    {% endfor %}
+    
+    
+</table>
