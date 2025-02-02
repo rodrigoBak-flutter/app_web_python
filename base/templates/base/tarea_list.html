@@ -1,3 +1,15 @@
+{% if request.user.is_authenticated %}
+<p>{{request.user}}</p> 
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Salir</button>
+</form> 
+{% else %}
+<a href= "{% url 'login' %}">Ingresar</a> 
+{% endif%}
+<hr>
+
+   
 <h1>Lista de pendientes<h1/>    
 <a href= "{% url 'crear-tarea' %}">Crear nueva tarea</a>    
     
@@ -29,3 +41,4 @@
     
     
 </table>
+
